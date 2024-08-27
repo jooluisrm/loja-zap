@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Laptop2, Moon, Sun } from "lucide-react"
 
 export function ThemeToggle() {
   const { setTheme } = useTheme()
@@ -26,13 +27,13 @@ export function ThemeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+          <Sun className="mr-2"></Sun> Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+          <Moon className="mr-2"></Moon> Dark
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+          <Laptop2 className="mr-2"></Laptop2> Sistema
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

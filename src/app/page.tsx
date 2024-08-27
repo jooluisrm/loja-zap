@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button"
 const Page = () => {
     return (
         <div className="w-full max-w-4xl mx-auto">
-            <Header/>
+            <Header />
             <div className="mx-3">
                 ...
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 }
