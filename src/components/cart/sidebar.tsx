@@ -1,13 +1,12 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { CarIcon } from "lucide-react";
 import { RocketIcon } from "@radix-ui/react-icons";
 import { Separator } from "../ui/separator";
 
 export const CartSidebar = () => {
     return (
         <Sheet>
-            <SheetTrigger>
+            <SheetTrigger asChild>
                 <Button>
                     <RocketIcon className="mr-2" />
                     <p>Carrinho</p>
