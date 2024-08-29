@@ -121,7 +121,7 @@ export const StepAddress = ({ setStep }: Props) => {
                                 <FormControl>
                                     <Select defaultValue={field.value} onValueChange={field.onChange}>
                                         <SelectTrigger>
-                                            <SelectValue placeholder="Estado"/>
+                                            <SelectValue placeholder="Estado" />
                                         </SelectTrigger>
                                         <SelectContent>
                                             <SelectItem value="sp">São Paulo</SelectItem>
