@@ -3,12 +3,11 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Progress } from "@/components/ui/progress";
 import { useState } from "react";
-import { StepUser } from "./step-user";
-import { StepAddress } from "./step-address";
-import { StepFinish } from "./step-finish";
+import { StepUser } from "@/components/checkout/step-user";
+import { StepAddress } from "@/components/checkout/step-address";
+import { StepFinish } from "@/components/checkout/step-finish";
+import { CheckoutSteps } from "@/types/checkout-step";
 
-
-type Steps = "user" | "address" | 'finish';
 
 type Props = {
     open: boolean;
@@ -17,7 +16,7 @@ type Props = {
 
 export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
 
-    const [step, setStap] = useState<Steps>('user');
+    const [step, setStap] = useState<CheckoutSteps>('user');
 
     let progressPct = 0;
     switch (step) {
