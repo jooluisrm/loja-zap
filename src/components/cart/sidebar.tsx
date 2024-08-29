@@ -6,8 +6,11 @@ import { RocketIcon } from "@radix-ui/react-icons";
 import { Separator } from "../ui/separator";
 import { useCartStore } from "@/stores/cart-store";
 import { CartItem } from "./item";
+import { useState } from "react";
+import { CheckoutDialog } from "../checkout/dialog";
 
 export const CartSidebar = () => {
+    const [checkoutOpen, setCheckoutOpen] = useState(false);
 
     const { cart } = useCartStore(state => state);
 
@@ -34,7 +37,7 @@ export const CartSidebar = () => {
 
                 <div className="flex flex-col gap-5 my-3">
                     {cart.map(item => (
-                        <CartItem key={item.product.id} item={item}/>
+                        <CartItem key={item.product.id} item={item} />
                     ))}
                 </div>
 
@@ -48,8 +51,17 @@ export const CartSidebar = () => {
                 <Separator className="my-4" />
 
                 <div className="text-center">
-                    <Button disabled={cart.length === 0}>Finalizar Compra</Button>
+                    <Button
+                        disabled={cart.length === 0}
+                        onClick={() => setCheckoutOpen(true)}
+                    >Finalizar Compra
+                    </Button>
                 </div>
+
+                <CheckoutDialog 
+                    open={checkoutOpen}
+                    onOpenChange={setCheckoutOpen}
+                />
             </SheetContent>
         </Sheet>
     );
